@@ -1,0 +1,26 @@
+enabled: true
+mode: production
+https: false
+ssl_certs: false
+tunnel: false
+open_website: true
+open_url: local
+console_display:
+  error: true
+  warning: true
+overlay_display:
+  error: true
+  warning: true
+overlay_text_color: '#CCCCCC'
+overlay_bg_color: '#1D1D26'
+open_browsersyncui: true
+open_bundleanalyzer: true
+open_jarvis: true
+os_notify: true
+os_notify_sound: true
+browsersync_notify: true
+manifest: true
+vendors: true
+commons: true
+dev_sourcemaps: cheap-module-eval-source-map
+prod_sourcemaps: (none)

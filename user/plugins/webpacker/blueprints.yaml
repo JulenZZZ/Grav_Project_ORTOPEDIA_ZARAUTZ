@@ -1,0 +1,280 @@
+name: Webpacker
+version: 1.3.4
+description: Offer a simple way to include the power of webpack inside Grav
+icon: refresh
+keywords: 'grav, plugin, webpack, assets, workflow'
+license: MIT
+author:
+  name: jimblue
+homepage: https://github.com/jimblue/grav-plugin-webpacker
+bugs: https://github.com/jimblue/grav-plugin-webpacker/issues
+docs: https://github.com/jimblue/grav-plugin-webpacker/blob/develop/README.md
+dependencies:
+  - admin
+form:
+  validation: strict
+  fields:
+    enabled:
+      type: toggle
+      label: PLUGIN_ADMIN.PLUGIN_STATUS
+      highlight: 1
+      default: 1
+      options:
+        '1': PLUGIN_ADMIN.ENABLED
+        '0': PLUGIN_ADMIN.DISABLED
+      validate:
+        type: bool
+    mode_section:
+      type: section
+      title: PLUGIN_WEBPACKER.MODE.TITLE
+      fields:
+        mode:
+          type: select
+          size: medium
+          label: PLUGIN_WEBPACKER.MODE.LABEL
+          help: PLUGIN_WEBPACKER.MODE.HELP
+          default: production
+          options:
+            production: PLUGIN_WEBPACKER.MODE.OPTION.PROD
+            development: PLUGIN_WEBPACKER.MODE.OPTION.DEV
+    server_section:
+      type: section
+      title: PLUGIN_WEBPACKER.SERVER.TITLE
+      fields:
+        proxy:
+          type: text
+          size: medium
+          autofocus: true
+          label: PLUGIN_WEBPACKER.SERVER.PROXY
+          placeholder: PLUGIN_WEBPACKER.SERVER.PROXY_PLACEHOLDER
+          help: PLUGIN_WEBPACKER.SERVER.PROXY_HELP
+          validate:
+            required: true
+        https:
+          type: toggle
+          label: PLUGIN_WEBPACKER.SERVER.BROWSERSYNC_HTTPS
+          help: PLUGIN_WEBPACKER.SERVER.BROWSERSYNC_HTTPS_HELP
+          highlight: 1
+          default: 0
+          options:
+            '1': PLUGIN_ADMIN.ENABLED
+            '0': PLUGIN_ADMIN.DISABLED
+          validate:
+            type: bool
+        ssl_certs:
+          type: toggle
+          label: PLUGIN_WEBPACKER.SERVER.BROWSERSYNC_SSL_CERTS
+          help: PLUGIN_WEBPACKER.SERVER.BROWSERSYNC_SSL_CERTS_HELP
+          highlight: 1
+          default: 0
+          options:
+            '1': PLUGIN_ADMIN.ENABLED
+            '0': PLUGIN_ADMIN.DISABLED
+          validate:
+            type: bool
+        tunnel:
+          type: toggle
+          label: PLUGIN_WEBPACKER.SERVER.TUNNEL
+          help: PLUGIN_WEBPACKER.SERVER.TUNNEL_HELP
+          highlight: 1
+          default: 0
+          options:
+            '1': PLUGIN_ADMIN.ENABLED
+            '0': PLUGIN_ADMIN.DISABLED
+          validate:
+            type: bool
+    webbrowser_section:
+      type: section
+      title: PLUGIN_WEBPACKER.WEBBROWSER.TITLE
+      fields:
+        open_website:
+          type: toggle
+          label: PLUGIN_WEBPACKER.WEBBROWSER.OPEN
+          help: PLUGIN_WEBPACKER.WEBBROWSER.OPEN_HELP
+          highlight: 1
+          default: 1
+          options:
+            '1': PLUGIN_ADMIN.ENABLED
+            '0': PLUGIN_ADMIN.DISABLED
+          validate:
+            type: bool
+        open_url:
+          type: select
+          size: medium
+          label: PLUGIN_WEBPACKER.WEBBROWSER.URL.LABEL
+          help: PLUGIN_WEBPACKER.WEBBROWSER.URL.HELP
+          default: local
+          options:
+            local: PLUGIN_WEBPACKER.WEBBROWSER.URL.OPTION.LOCAL
+            external: PLUGIN_WEBPACKER.WEBBROWSER.URL.OPTION.EXTERNAL
+            tunnel: PLUGIN_WEBPACKER.WEBBROWSER.URL.OPTION.TUNNEL
+        console_display:
+          type: checkboxes
+          label: PLUGIN_WEBPACKER.WEBBROWSER.CONSOLE
+          help: PLUGIN_WEBPACKER.WEBBROWSER.CONSOLE_HELP
+          default:
+            error: false
+            warning: true
+          options:
+            error: PLUGIN_WEBPACKER.WEBBROWSER.SHOW_ERROR
+            warning: PLUGIN_WEBPACKER.WEBBROWSER.SHOW_WARNING
+          use: keys
+        overlay_display:
+          type: checkboxes
+          label: PLUGIN_WEBPACKER.WEBBROWSER.OVERLAY
+          help: PLUGIN_WEBPACKER.WEBBROWSER.OVERLAY_HELP
+          default:
+            error: false
+            warning: true
+          options:
+            error: PLUGIN_WEBPACKER.WEBBROWSER.SHOW_ERROR
+            warning: PLUGIN_WEBPACKER.WEBBROWSER.SHOW_WARNING
+          use: keys
+        overlay_text_color:
+          type: colorpicker
+          label: PLUGIN_WEBPACKER.WEBBROWSER.OVERLAY_TEXT_COLOR
+          help: PLUGIN_WEBPACKER.WEBBROWSER.OVERLAY_TEXT_COLOR_HELP
+          default: "#CCCCCC"
+        overlay_bg_color:
+          type: colorpicker
+          label: PLUGIN_WEBPACKER.WEBBROWSER.OVERLAY_BG_COLOR
+          help: PLUGIN_WEBPACKER.WEBBROWSER.OVERLAY_BG_COLOR_HELP
+          default: "#1D1D26"
+    tools_section:
+      type: section
+      title: PLUGIN_WEBPACKER.TOOLS.TITLE
+      fields:
+        open_browsersyncui:
+          type: toggle
+          label: PLUGIN_WEBPACKER.TOOLS.OPEN_BROWSERSYNC_UI
+          help: PLUGIN_WEBPACKER.TOOLS.OPEN_BROWSERSYNC_UI_HELP
+          highlight: 1
+          default: 1
+          options:
+            '1': PLUGIN_ADMIN.ENABLED
+            '0': PLUGIN_ADMIN.DISABLED
+          validate:
+            type: bool
+        open_bundleanalyzer:
+          type: toggle
+          label: PLUGIN_WEBPACKER.TOOLS.OPEN_BUNDLE_ANALYZER
+          help: PLUGIN_WEBPACKER.TOOLS.OPEN_BUNDLE_ANALYZER_HELP
+          highlight: 1
+          default: 1
+          options:
+            '1': PLUGIN_ADMIN.ENABLED
+            '0': PLUGIN_ADMIN.DISABLED
+          validate:
+            type: bool
+        open_jarvis:
+          type: toggle
+          label: PLUGIN_WEBPACKER.TOOLS.OPEN_JARVIS
+          help: PLUGIN_WEBPACKER.TOOLS.OPEN_JARVIS_HELP
+          highlight: 1
+          default: 1
+          options:
+            '1': PLUGIN_ADMIN.ENABLED
+            '0': PLUGIN_ADMIN.DISABLED
+          validate:
+            type: bool
+    notifications_section:
+      type: section
+      title: PLUGIN_WEBPACKER.NOTIFICATIONS.TITLE
+      fields:
+        os_notify:
+          type: toggle
+          label: PLUGIN_WEBPACKER.NOTIFICATIONS.OS_NOTIFY
+          help: PLUGIN_WEBPACKER.NOTIFICATIONS.OS_NOTIFY_HELP
+          highlight: 1
+          default: 1
+          options:
+            '1': PLUGIN_ADMIN.ENABLED
+            '0': PLUGIN_ADMIN.DISABLED
+          validate:
+            type: bool
+        os_notify_sound:
+          type: toggle
+          label: PLUGIN_WEBPACKER.NOTIFICATIONS.OS_NOTIFY_SOUND
+          help: PLUGIN_WEBPACKER.NOTIFICATIONS.OS_NOTIFY_SOUND_HELP
+          highlight: 1
+          default: 1
+          options:
+            '1': PLUGIN_ADMIN.ENABLED
+            '0': PLUGIN_ADMIN.DISABLED
+          validate:
+            type: bool
+        browsersync_notify:
+          type: toggle
+          label: PLUGIN_WEBPACKER.NOTIFICATIONS.BROWSERSYNC_NOTIFY
+          help: PLUGIN_WEBPACKER.NOTIFICATIONS.BROWSERSYNC_NOTIFY_HELP
+          highlight: 1
+          default: 1
+          options:
+            '1': PLUGIN_ADMIN.ENABLED
+            '0': PLUGIN_ADMIN.DISABLED
+          validate:
+            type: bool
+    splitting_section:
+      type: section
+      title: PLUGIN_WEBPACKER.SPLITTING.TITLE
+      fields:
+        manifest:
+          type: toggle
+          label: PLUGIN_WEBPACKER.SPLITTING.MANIFEST
+          help: PLUGIN_WEBPACKER.SPLITTING.MANIFEST_HELP
+          highlight: 1
+          default: 1
+          options:
+            '1': PLUGIN_ADMIN.ENABLED
+            '0': PLUGIN_ADMIN.DISABLED
+          validate:
+            type: bool
+        vendors:
+          type: toggle
+          label: PLUGIN_WEBPACKER.SPLITTING.VENDORS
+          help: PLUGIN_WEBPACKER.SPLITTING.VENDORS_HELP
+          highlight: 1
+          default: 1
+          options:
+            '1': PLUGIN_ADMIN.ENABLED
+            '0': PLUGIN_ADMIN.DISABLED
+          validate:
+            type: bool
+        commons:
+          type: toggle
+          label: PLUGIN_WEBPACKER.SPLITTING.COMMONS
+          help: PLUGIN_WEBPACKER.SPLITTING.COMMONS_HELP
+          highlight: 1
+          default: 1
+          options:
+            '1': PLUGIN_ADMIN.ENABLED
+            '0': PLUGIN_ADMIN.DISABLED
+          validate:
+            type: bool
+    devtools_section:
+      type: section
+      title: PLUGIN_WEBPACKER.DEVTOOLS.TITLE
+      fields:
+        dev_sourcemaps:
+          type: select
+          size: medium
+          label: PLUGIN_WEBPACKER.DEVTOOLS.DEV_SOURCEMAPS.LABEL
+          help: PLUGIN_WEBPACKER.DEVTOOLS.DEV_SOURCEMAPS.HELP
+          default: cheap-module-eval-source-map
+          options:
+            (none): PLUGIN_WEBPACKER.DEVTOOLS.DEV_SOURCEMAPS.OPTION.NONE
+            eval: PLUGIN_WEBPACKER.DEVTOOLS.DEV_SOURCEMAPS.OPTION.EVAL
+            eval-source-map: PLUGIN_WEBPACKER.DEVTOOLS.DEV_SOURCEMAPS.OPTION.EVAL_SOURCEMAP
+            cheap-eval-source-map: PLUGIN_WEBPACKER.DEVTOOLS.DEV_SOURCEMAPS.OPTION.CHEAP_EVAL_SOURCEMAP
+            cheap-module-eval-source-map: PLUGIN_WEBPACKER.DEVTOOLS.DEV_SOURCEMAPS.OPTION.CHEAP_MODULE_EVAL_SOURCEMAP
+        prod_sourcemaps:
+          type: select
+          size: medium
+          label: PLUGIN_WEBPACKER.DEVTOOLS.PROD_SOURCEMAPS.LABEL
+          help: PLUGIN_WEBPACKER.DEVTOOLS.PROD_SOURCEMAPS.HELP
+          default: (none)
+          options:
+            (none): PLUGIN_WEBPACKER.DEVTOOLS.PROD_SOURCEMAPS.OPTION.NONE
+            source-map: PLUGIN_WEBPACKER.DEVTOOLS.PROD_SOURCEMAPS.OPTION.SOURCEMAP
+            hidden-source-map: PLUGIN_WEBPACKER.DEVTOOLS.PROD_SOURCEMAPS.OPTION.HIDDEN
+            nosources-source-map: PLUGIN_WEBPACKER.DEVTOOLS.PROD_SOURCEMAPS.OPTION.NOSOURCES

@@ -1,0 +1,14 @@
+{
+  "private": true,
+  "scripts": {
+    "setup": "yarn",
+    "clean": "rm -rf node_modules yarn.lock",
+    "reset": "yarn clean && yarn setup",
+    "webpack": "node webpack.config.js",
+    "webpack:dev": "node webpack.config.js --mode=development",
+    "webpack:prod": "node webpack.config.js --mode=production"
+  },
+  "devDependencies": {
+    "grav-webpacker": "latest"
+  }
+}

@@ -1,0 +1,91 @@
+PLUGIN_WEBPACKER:
+  MODE:
+    TITLE: Mode
+    LABEL: Mode
+    HELP: Running Grav and webpack for development or production
+    OPTION:
+      DEV: Development
+      PROD: Production
+  SERVER:
+    TITLE: Development server
+    BROWSERSYNC_HTTPS: HTTPS
+    BROWSERSYNC_HTTPS_HELP: Toggle HTTPS on server with HTTP2
+    BROWSERSYNC_SSL_CERTS: SSL certificates
+    BROWSERSYNC_SSL_CERTS_HELP: Toggle SSL certificates to prevent browser security message (HTTPS settings need to be enabled)
+    PROXY: Proxy
+    PROXY_PLACEHOLDER: 'e.g. http(s)://domain_name.dev'
+    PROXY_HELP: The php server domain where Grav is running
+    TUNNEL: Tunnel
+    TUNNEL_HELP: Create a tunnel server trough a random public url
+  WEBBROWSER:
+    TITLE: Web browser
+    OPEN: Open website
+    OPEN_HELP: Open website on default web browser after initialization
+    URL:
+      LABEL: Website URL
+      HELP: >-
+        URL to open if option is enabled. Local URL can be access on this machine only. External URL can be access if connected to the same server. Tunnel URL can be access if connected to internet and Tunnel option is enabled
+      OPTION:
+        LOCAL: local
+        EXTERNAL: external
+        TUNNEL: tunnel
+    CONSOLE: Console
+    CONSOLE_HELP: How coding errors, linting errors and webpack runtime errors must be display in the web browser
+    OVERLAY: Overlay
+    OVERLAY_HELP: How coding errors, linting errors and webpack runtime errors must be display in the web browser
+    SHOW_ERROR: display errors
+    SHOW_WARNING: display warnings
+    OVERLAY_TEXT_COLOR: Overlay text color
+    OVERLAY_TEXT_COLOR_HELP: The text color for the the web browser overlay
+    OVERLAY_BG_COLOR: Overlay background color
+    OVERLAY_BG_COLOR_HELP: The background color for the the web browser overlay
+  TOOLS:
+    TITLE: Tools
+    OPEN_BROWSERSYNC_UI: BrowserSync UI
+    OPEN_BROWSERSYNC_UI_HELP: Open BrowserSync UI on default web browser after initialization
+    OPEN_BUNDLE_ANALYZER: BundleAnalyzer
+    OPEN_BUNDLE_ANALYZER_HELP: Open BundleAnalyzer on default web browser after initialization
+    OPEN_JARVIS: Jarvis
+    OPEN_JARVIS_HELP: Open Jarvis Webpack dashboard on default web browser after initialization
+  NOTIFICATIONS:
+    TITLE: Notifications
+    OS_NOTIFY: OS Notification
+    OS_NOTIFY_HELP: Toggle OS notification
+    OS_NOTIFY_SOUND: OS Notification sound
+    OS_NOTIFY_SOUND_HELP: Toggle OS notification sound
+    BROWSERSYNC_NOTIFY: BrowserSync notification
+    BROWSERSYNC_NOTIFY_HELP: Toggle BrowserSync status popup
+  SPLITTING:
+    TITLE: Code Splitting
+    MANIFEST: Manifest
+    MANIFEST_HELP: Move webpack runtime code to a separate manifest.js file in order to support long-term caching. This will avoid hash recreation for other files when only application files are changed
+    VENDORS: Vendors
+    VENDORS_HELP: Move node_modules vendors to a separate vendors.js file in order to support long-term caching. This will avoid hash recreation for other files when only application files are changed
+    COMMONS: Commons
+    COMMONS_HELP: Move modules used in multiple assets to a separate commons.js file in order to support long-term caching. This will avoid hash recreation for other files when only application files are changed
+  DEVTOOLS:
+    TITLE: Sourcemaps
+    DEV_SOURCEMAPS:
+      LABEL: Development source maps
+      HELP: >-
+        Refer to webpack documentation to choose your settings https://webpack.js.org/configuration/devtool/
+      OPTION:
+        NONE: (none)
+        EVAL: eval
+        EVAL_SOURCEMAP: eval-source-map
+        CHEAP_EVAL_SOURCEMAP: cheap-eval-source-map
+        CHEAP_MODULE_EVAL_SOURCEMAP: cheap-module-eval-source-map
+    PROD_SOURCEMAPS:
+      LABEL: Production source maps
+      HELP: >-
+        Refer to webpack documentation to choose your settings https://webpack.js.org/configuration/devtool/
+      OPTION:
+        NONE: (none)
+        SOURCEMAP: source-map
+        HIDDEN: hidden-source-map
+        NOSOURCES: nosources-source-map
+  ERRORS:
+    MISSING_FILE: doesn't exist, check your theme assets folder and run webpack script in production mode to build assets
+    MISSING_JSON: doesn't exist, run webpack script in production mode to build assets
+    WRONG_EXTENSION: extension must be css or js
+    MISSING_EXTENSION: must have an extension (css or js)
