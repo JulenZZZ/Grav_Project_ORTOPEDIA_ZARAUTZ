@@ -1,5 +1,5 @@
 ---
-title: ''
+title: 'ORTOPÉDIA ZARAUTZ'
 template: custom
 description: 'Venta de productos ortopédicos de la mas alta calidad'
 services: 'Servicios'

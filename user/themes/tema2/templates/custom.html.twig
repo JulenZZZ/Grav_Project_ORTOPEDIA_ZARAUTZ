@@ -46,8 +46,8 @@
                     </div>
                 </nav>
                 <div class="tc-l mt4 mt5-m mt6-l ph3">
-                    <h1 class="f2 f1-l fw2 white-90 mb0 lh-title">ORTOPÉDIA ZARAUTZ</h1>
-                    <h2 class="fw1 f3 white-80 mt3 mb4">VENTA DE PRODUCTOS ORTOPÈDICOS DE MAS ALTA CALIDAD</h2>
+                    <h1 class="f2 f1-l fw2 white-90 mb0 lh-title">{{ page.header.title }}</h1>
+                    <h2 class="fw1 f3 white-80 mt3 mb4">{{ page.header.description }}</h2>
                     <a class="f6 no-underline grow dib v-mid bg-blue white ba b--blue ph3 pv2 mb3" href="/">Call to Action</a>
                     <span class="dib v-mid ph3 white-70 mb3">or</span>
                     <a class="f6 no-underline grow dib v-mid white ba b--white ph3 pv2 mb3" href="">Secondary call to action</a>
@@ -124,28 +124,6 @@
 
 
             </article>
-        </article>
-        <!-- Segundo Parallax2 -->
-        <article >
-            <div id="app">
-                <div class="parallax2" style="min-height:500px; ">
-                    <!-- Imagen del smartphone y texto con icono encima del parallax -->
-                    <section class="flex-ns vh-100 items-center">
-                        <div class="mw6 ph5 ml-100">
-                            <img src="https://lh3.googleusercontent.com/bY6K6fjdvjyMmKVRqp5_JNZ9YRVuK-8S9qxvUg1xjrcgpzbv20WMHXBqE_bEIW9vjLRn=h900" alt="img_movil">
-                        </div>
-                        <div class="tc tl-ns ph3">
-                            <h1 class="f4 f1-l fw1 mb3 mt4 mt0-ns near-white">{{ page.header.layout1 }}</h1>
-                            <h2 class="f5 f3-l fw1 mb4 mb5-l lh-title near-white">{{ page.header.layouts1 }}</h2>
-                            <div class="btn_apple">
-                                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAQoSURBVGhD7ZpryBZFFMdfrdSiMsM0b2UEqaCgZKGkUCBKVxIp+lDhLRSlhCyKIAiCEg0MRcqkCKKwy4eKSFEMIdPISivogh/KslIzNdHMSu332zzwtLzQs/tcZl/wD78PM8+zM2d2Z/acObMdiXQO3ANvwU74Bs6DLqPucD/sh5M5RkGX0AD4AMLw72AR/HWq3CUGMhC+Bg3eA9PhTOh7qk4uhUqrB3wKGrsF+kHoBrB+d1aquJw+Gvsl9LaiRqvA317JShWW6+IPOAHjrahRf/gdHMg4K6qsJ0BD12al/+pV8Ld1Wani2g4aOyMr/atusASsPwyXQaV1PhwHDR5mBRoOPgHrjsHNkFwuXOf9FLgW8nd2BGiwPAzvQgzsENwKevMrYRJMhtHgW67lsuOFsA1cwGFo4Gv0ObgFdHD53+UneBY+hBhYLUfhHbANI4Gmynk9B/ZBdOj83gR2qlEOotagzozMcwQ+Ap/WetgBtdfpf8ZCU3QuaGw0/h7cCGdBXq6Fh0Dj4v95DsLzYBu9IK9L4BH4Bfz/n7AAGpLr4BOwQUOLqVCvhoIR7tOwEh6Hm6An1CPDlxchbsADUErGQhvARvTKqV6TrslYj/OsKCrvoBd/D4OtSCSn64+gLRutKCLvvnNTrrYika6CA+Ag3IQZRRfSC+DFK7JSGrno94J2uPgL60Jws6PnTTmlYn0aPZfSHWADa7JSGl0P2vAF+NIppZhWvi1SKfyWN7W0toKNXJOV2i+dpHsY9yr1+pxOFaFGqj20IYn9b85KJWXkGc6nsxCkHTIqtv/XslJJubBsRFLJGMz+38xKDSgGYrCYQjpg+/84KzWg38CGDNpSyD2PEYULvqGbaYDoQFJmNsIZ3p2VSuoNsJHahEG7dTtow+dQ2iFG1PtUVkqjM8DttHY8akUZxVvDDVVKjQGd4t9wpxVFdTbYgP6kcNjcZN0GDkRbzIVpWyFFrDMrK6WV2+PYk/wM90HdmgleaPa8CjJcehu0SQZBXfIRRurHuVoFmXwodXMjP2tYn1pGxCb2tMepVkhuNfWw7hbN2aaUeyMH8RmYLCyspWADKXeLF0OETddZUUYXQCQAPCZLoZfB/hsK69VcsCHzW32saKMiVPGJDLGiEZkRN99rg6utaJM0/FewX0+BmyIbjUN+zzpaLXPOBoz25xFdU+V5RYQLd1lRh3RkE8CDHA+FLoL/kz4swngH05JPO3zEDsQzjMegs9OlkbAYdoHG5NG4B8FT3byugDiS+AFamiB08cdnF9/CkzAbPBd5H2qNdjCuL1/fJqDjzEPMZL4OTtX58BJ4WuVvX8Hl0HKZ84qvGfJ4kLMcPBvMyxeH08wPBNzK5q916j4D+Q8LWio97ERw42PnPplpUG+o7accPkmd7jK4F+oOBk+r2uro+AeDD0DqNNESEwAAAABJRU5ErkJggg==" alt="icono_apple">
-                                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAQhSURBVGhD7ZpJqBRXGEafQzRqQgTdBMQBFI1xVtQ4oJuALoMriauAIFkFcadLFwpuXOhCcQ5BVKKoOCCJwY0iRFeuXBhFo2ZQYySgcToH+oeiqH5d3V3VXQ3vg8PrGl99Xbfu/f5b3TegHtFqeAR/wHYYDT2ph/AuwZ+wAQZDz+hj8OJfwYva5+AGrISe0CfgRT+D5fBvbTnJCRgPlVbSiFoGYeYluN7P/8FW+AgqqbQRpZnn4PozcADe1JYfwFoYBJVSlhG1FP4Bt+2HBfBLbVmuwmKojOoZUUsgmtZBGArejbu1dW9hH3wKXVd/RpTfepg5DENgBGwBnxvX+0xthuHQNTUyohZCmDkCmlH2ZD+Ad8Ztt+Er6IryGFE+I0/Bfb+HMKO+AMcct8llmAEdVV4jaj48Aff3TiTNmAK+gd/B7f/DLhgLHVEzRtQ8+Bs85igkzSiTwg5wDHIf7+J3YEdRqpo1oubCX+BxxyDrIifDj+A+cgtWQWlqxYiaA4ZLjz0OH0CWvHhNhKHzMAUKV6tGVNKMeWwYZMk79i3E82Wzs/kVWi60Y0TNBusYz2FTqmdG+eDvBvcVvwQ7iELKhXaNqJkQZk5BPTPmsz3gfq9rf+VXaDvuFGFEfQ6PwXOdhrQZTewFtxtIDaYOng6irnNQtUtvuVwoyoiaDpbMnu8shBmbjpnM9QZRA2nIuGO8idLB2GP8cX1TKtKI+gyidD4HI8H0HP/DIJolg6dmo1wwmBpQc6toI2oaxAgffz2/UaaRzHWWCB4jmsulMowom1mM7rb/FZBXPk/rIcLoOGioMowYWw6B5w0cCPO0e02sg7iT9yBXeVC0EU1Yt3hOM9kaiELsIvjM1NMiSDYrP0+EXCrSiCaM+J7PLGYmU5PgN3D9JUibST/oLc0LFGVEE44DaRMhv9k74HbrFc3YPW+CZNfb8kxNEUY0YaT3PMYOM1iWJkCYuQYxGEpbg6Fq14iB0CjvOYwpZq/+5DxzXLwUNpvZjhGjuxE+TMyCehoDVoxWju5vr1RYYFStGrF9G93DhMExSxHhI+47tmyDwmcsWzGiiaj+DIoGxiyliyqPsXIsRc0a0YRRPUw4gqflxZ6EMKCZL6FUNWNEE0Z09zflpk1Y8SUnHhwQbValTzyovEaSJky3ptxQTAVF6u34VJDKY0QT1hdhwnQbsutMTs79DFnNrXQ1MmJgs65wH7vMMFGp6VLVn5EPwdTqdvPPVBgFxoj0BLZ3rauqZ8TIfQHcdh80kX6lYOVXiVcKKsuIgc7IHSasD9LxulIveVTaiCaM2q6zG70CEa99Rr6GpuJ1p5Q0oomfastJKv8iVIUR37FbJ6RNGCssjCov70J0oUluQs/8WCB0HcKAKbVjsaJoWYbuhI3Qsz+oGVD31Nf3HlF3i5jr+ZCjAAAAAElFTkSuQmCC" alt="icono_google">
-                            </div>
-
-                        </div>
-                    </section>
-                </div>
-            </div>
         </article>
 
         <article id="layout-contacto" >
