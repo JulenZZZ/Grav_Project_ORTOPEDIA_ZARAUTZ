@@ -15,19 +15,7 @@
     background-size: cover;
 }
 
-.parallax2 {
-    /* The image used */
-    background-image: url("../images/img12.jpeg");
 
-    /* Set a specific height */
-    height: 700px;
-
-    /* Create the parallax scrolling effect */
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
 
 .collumn2 {
     /* The image used
