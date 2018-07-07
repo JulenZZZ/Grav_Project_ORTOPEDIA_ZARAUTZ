@@ -1,7 +1,7 @@
 ---
 title: 'ORTOPÉDIA ZARAUTZ'
 template: custom
-description: 'Venta de productos ortopédicos de la mas alta calidad'
+description: 'Venta de productos ortopédicos de la más alta calidad'
 services: 'Servicios'
 repare: 'Reparaciones'
 reparedescrip: 'Contamos con servicios de reparacion de todos tipo de dispositivo movil'
