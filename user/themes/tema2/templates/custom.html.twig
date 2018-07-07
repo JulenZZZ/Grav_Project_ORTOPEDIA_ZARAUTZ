@@ -49,7 +49,7 @@
                 <div class="tc-l mt4 mt5-m mt6-l ph3">
                     <h1 class="f2 f1-l fw2 white-90 mb0 lh-title">{{ page.header.title }}</h1>
                     <h2 class="fw1 f3 white-80 mt3 mb4">{{ page.header.description }}</h2>
-                    <a class="f6 no-underline grow dib v-mid bg-blue white ba b--blue ph3 pv2 mb3" href="/">Nuestros Servicios</a>
+                    <a id="call1" class="f6 no-underline grow dib v-mid bg-blue white ba b--blue ph3 pv2 mb3" href="#servicios">Nuestros Servicios</a>
 
                 </div>
             </div>
@@ -71,10 +71,7 @@
     </header> -->
 
 
-        <div class="parallax" style="min-height:400px; ">
 
-            <div id="parallaxtext" ></div>
-        </div>
         <!-- Layout principar creado con HTML y CSS-->
         <article id="layout2"  style="height: 460px">
 
@@ -119,6 +116,13 @@
                 <div id="hello">Hello</div>
                 <hr/>
                 <div id="world">World</div>
+
+                <!-- efecto parallax -->
+
+                <div class="parallax" style="min-height:400px; ">
+
+                    <div id="parallaxtext" ></div>
+                </div>
 
 
 
@@ -212,6 +216,28 @@
                         inputPlaceholder: 'Enter your email address'
                     })
 
+                });
+
+                $("#call1").on('click', function(event) {
+
+                    // Make sure this.hash has a value before overriding default behavior
+                    if (this.hash !== "") {
+                        // Prevent default anchor click behavior
+                        event.preventDefault();
+
+                        // Store hash
+                        var hash = this.hash;
+
+                        // Using jQuery's animate() method to add smooth page scroll
+                        // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+                        $('html, body').animate({
+                            scrollTop: $(hash).offset().top
+                        }, 800, function(){
+
+                            // Add hash (#) to URL when done scrolling (default click behavior)
+                            window.location.hash = hash;
+                        });
+                    } // End if
                 });
             });
 
